@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - Naviation NGO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF3333;
+            --primary-dark: #CC0000;
+            --secondary: #1A1A1A;
+            --text: #FFFFFF;
+            --text-dark: #333333;
+            --background: #000000;
+            --background-light: #2A2A2A;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            font-size: 18px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--secondary);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .coming-soon {
+            font-size: 6rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        footer {
+            background: var(--secondary);
+            color: var(--text);
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .btn2 {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--text);
+            padding: 0.1rem 1rem;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1px;
+            border: 1px solid var(--primary);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--secondary);
+                padding: 1rem 0;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .coming-soon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"> <a href="index.html"> <img src="logo.png" alt="Naviation NGO Logo" height="60" width="60"></a> </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    ☰
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="index.html" class="dropbtn">Programs</a>
+                        <div class="dropdown-content">
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdk7dGGj1DVLd1LQJjnhUR9IEcHO60iQlpFp18bByYQOkTXaw/viewform?usp=sf_link">Volunteer</a>
+                            <a href="ambassadors.html">Ambassador Program</a>
+                            <a href="coming-soon.html">Digital Literacy and Coding</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdk7dGGj1DVLd1LQJjnhUR9IEcHO60iQlpFp18bByYQOkTXaw/viewform?usp=sf_link" class="btn2">Volunteer Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header><br>
+<br>
+<br>
+<br>
+<br>
+
+
+    <main style="height: calc(100vh - 80px - 76px);">
+        <div class="coming-soon">COMING SOON</div>
+    </main><br>
+<br>
+<br>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Naviation Pakistan. All rights reserved.</p>
+			<p>Navigating now, Innovating next</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple toggle for mobile navigation
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
